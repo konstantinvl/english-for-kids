@@ -1,0 +1,10 @@
+.stat-cat{
+    display: flex;
+    flex-direction: column;
+    padding: calc( 0.5vh + 0.5vw );
+    margin:auto;
+    & div{
+        display: flex;
+        flex-direction: row;
+    }
+}

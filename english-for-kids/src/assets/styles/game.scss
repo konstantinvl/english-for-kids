@@ -1,0 +1,36 @@
+@import "colors";
+.start-game{
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    left:50%;
+    padding: calc(0.1vh + 0.1vw);
+    border: $gray-for-border solid 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: $green-gradient;
+}
+.fade{
+    position: absolute;
+    z-index: 10;
+    width: 70vw;
+    height: 86vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: $green-for-shadow;
+}
+.score{
+    position: absolute;
+    top: 0.3vh;
+    justify-self: center;
+    display: flex;
+    width: 10em;
+    overflow: hidden;
+    & img{
+        
+        width: 1em;
+        height: 1em;
+    }
+}

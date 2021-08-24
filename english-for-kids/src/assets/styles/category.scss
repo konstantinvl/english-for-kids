@@ -1,0 +1,98 @@
+$size:calc( ( 100vw ) / 14 + ( 100vh ) / 14);
+@import "colors";
+
+.category{
+    
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    margin:calc( 0.5vh + 0.5vw );
+    width: $size;
+    height: $size;
+    border-radius: 10px;
+    border:solid 0.1px $gray-for-border;
+    box-shadow: 4px 5px 10px $green-for-shadow;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s linear;
+    
+    z-index: 1;
+
+    & input{
+        width:90%;
+    }
+    & label{
+        font-size: 0.65em;
+    }
+
+    &:hover {
+      transform: scale(1.05) ;
+    }
+    &_top{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background: $green-gradient;
+        width: 100%;
+        height: 60%;
+        box-shadow: 4px 5px 10px $green-for-shadow;
+    }
+    &_name{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 40%;
+        padding-bottom: 5%;
+    }
+    &_image{
+        position: absolute;
+        width: 55%;
+        height: 55%;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+    & .round{
+        position:absolute;
+        height: 3em;
+        width: 3em;
+        border-radius: 50%;
+        border: 2px solid gray;
+        z-index: 3;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.5em;
+        flex-wrap: wrap;
+        transition: 0.5s;
+        cursor: pointer;
+        right: -1.5em;
+        text-align: center;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    &_add-word{
+        top: calc( 50% - 1.5em);
+        
+    }
+    &_delete{
+        bottom: -1.5em;
+    }
+    &_update{
+        top: -1.5em;
+        
+    }
+    & .invis{
+        visibility: hidden;
+    }
+    & .quantity{
+        position: absolute;
+        top: 0.1em;
+        font-size: 0.7em;
+    }    
+    
+}

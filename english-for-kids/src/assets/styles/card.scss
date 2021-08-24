@@ -1,0 +1,132 @@
+@import "colors";
+$size:calc( ( 100vw ) / 14 + ( 100vh ) / 14);
+//$color: linear-gradient(180deg, #0099AE 0%, #00BF82 100%);
+.card-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    //margin: 0.5vh 0.7vw;
+    margin:calc( 0.5vh + 0.5vw );
+    width: $size;
+    height: $size;
+    border-radius: 10px;
+    perspective: 500px;
+    
+}
+  
+  
+  
+  .card {
+    background: linear-gradient(160deg,
+    rgba(0, 153, 174, 0.2),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 191, 130, 0.4),
+    rgba(255, 255, 255, 0.1),
+    
+    );
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    box-sizing: border-box;
+    border:solid 0.1px $gray-for-border;
+    box-shadow: 4px 5px 10px $green-for-shadow;
+    width: 100%;
+    height: 100%;
+  }
+  .flipped{
+    & .rotate{
+      visibility: hidden;
+    }
+    transform: rotateY(180deg);
+    box-shadow: -4px 5px 10px $green-for-shadow;
+    
+  }
+  .card > div {
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+  }
+  
+  .card-back {
+    padding: auto;
+    background-position: center;
+    background-size: cover;
+    transform: rotateY(180deg);
+    display: flex;
+    font-size: 1.5em;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-front {
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10%;
+    cursor: default;
+  }
+  .rotate{
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    background-image: url(../images/rotate.png);
+    background-position: center;
+    background-size: cover;
+    width: 1em;
+    height: 1em ;
+    backface-visibility: hidden;
+    cursor:pointer;
+    &:hover{
+      transform: scale(1.1);
+      transition: 0.1s;
+    }
+  }
+  
+  .game-card-front{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: default;
+  }
+  .stats{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .round{
+    position:absolute;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    border: 2px solid gray;
+    z-index: 3;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5em;
+    flex-wrap: wrap;
+    transition: 0.5s;
+    cursor: pointer;
+    right: -1.5em;
+    text-align: center;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.category_update{
+    top: -1.5em;
+}
+
+
